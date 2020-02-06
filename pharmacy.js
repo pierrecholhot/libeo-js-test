@@ -39,6 +39,16 @@ export class Pharmacy {
           break;
         case "Magic Pill":
           break;
+        case "Dafalgan":
+          if (drug.benefit > 0) {
+            if (drug.expiresIn > 0) {
+              drug.benefit -= 2;
+            } else {
+              drug.benefit -= 4;
+            }
+          }
+          drug.expiresIn -= 1;
+          break;
         default:
           if (drug.benefit > 0) {
             if (drug.expiresIn > 0) {
