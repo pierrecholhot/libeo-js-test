@@ -14,6 +14,15 @@ export class Pharmacy {
     for (let drug of this.drugs) {
       switch (drug.name) {
         case "Herbal Tea":
+          if (drug.benefit < 50) {
+            if (drug.expiresIn > 0) {
+              drug.benefit += 1;
+            } else {
+              drug.benefit += 2;
+            }
+          }
+          drug.expiresIn -= 1;
+          break;
         case "Fervex":
         case "Magic Pill":
         default:
