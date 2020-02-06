@@ -38,6 +38,7 @@ export class Pharmacy {
           drug.expiresIn -= 1;
           break;
         case "Magic Pill":
+          break;
         default:
           if (drug.name != "Herbal Tea" && drug.name != "Fervex") {
             if (drug.benefit > 0) {
