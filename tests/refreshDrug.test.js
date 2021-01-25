@@ -8,20 +8,20 @@ import * as herbalTea from '../src/drugs/herbalTea';
 import * as magicPill from '../src/drugs/magicPill';
 
 describe('refreshDrug', () => {
-  it('benefit doubles when expired', () => {
+  it('should double benefit when expired', () => {
     const test = makeDrug('test', -2, 10);
     const drug = refreshDrug(test);
-    expect(drug).toContainEntry(['benefit', 8]);
+    expect(drug.benefit).toEqual(8);
   });
   it('benefit should not be negative', () => {
     const test = makeDrug('test', 1, -3);
     const drug = refreshDrug(test);
-    expect(drug).toContainEntry(['benefit', 0]);
+    expect(drug.benefit).toEqual(0);
   });
   it('benefit should not exceed 50', () => {
     const test = makeDrug('test', 1, 56);
     const drug = refreshDrug(test);
-    expect(drug).toContainEntry(['benefit', 50]);
+    expect(drug.benefit).toEqual(50);
   });
   it('should target DAFALGAN', () => {
     const spy = jest.spyOn(dafalgan, 'default');

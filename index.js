@@ -23,7 +23,7 @@ for (let elapsedDays = 0; elapsedDays < 30; elapsedDays++) {
 }
 
 /* eslint-disable no-console */
-fs.writeFile('./output/data.json', JSON.stringify(log, null, 2), (err) => {
+fs.writeFile('./output/data.json', JSON.stringify(log, null, 2), err => {
   if (err) {
     console.error('error', err);
   } else {
